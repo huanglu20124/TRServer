@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ds-config>
+	<pool>
+		<type>mysql</type>
+		<name>mysql</name>
+		<driver>com.mysql.jdbc.Driver</driver>
+		<url>jdbc:mysql://127.0.0.1:3306/travel</url>
+		<username>root</username>
+		<password>1234</password>
+		<maxconn>10000</maxconn>
+	</pool>
+
+
+	
+	
+</ds-config>
