@@ -1,6 +1,6 @@
 create database travel;
 use travel;
-create table Scenery (					#景点表
+create table scenery (					#景点表
 	`sceneryName` 		text NULL,		#景点名字
 	`sceneryAddress` 	text NULL,		#景点具体地址
 	`sceneryImageUrl` 	text NULL,		#景点介绍图片
@@ -12,10 +12,7 @@ create table Scenery (					#景点表
 	primary key (sceneryId)
 );
 
-insert into Note(account, agreeCount, timestamp, title, type)
-	values('黄远', 0, '2017-01-05 17:33:48', '第1条问题帖子', 'Question');
-
-create table Note   (					#贴子父表
+create table note   (					#贴子父表
 	`noteId` 		BIGINT auto_increment NOT NULL,			#帖子id(PK, FK)
 	`account` 		char(18) NOT NULL,			#发帖者账号
 	`agreeCount` 	BIGINT NULL,				#点赞数
@@ -25,26 +22,26 @@ create table Note   (					#贴子父表
 	primary key (noteId)
 );
 
-create table Route  (					#足迹贴表
+create table route  (					#足迹贴表
 	`noteId` 		BIGINT NOT NULL,						#帖子id(PK, FK)
 	`routeId` 		BIGINT auto_increment NOT NULL,			#足迹Id(PK)
 	`imgaeUrl` 		text,									#用户上传的图片
 	`content` 		text,									#心得
-	foreign key (noteId) references Note(noteId),
+	foreign key (noteId) references note(noteId),
 	primary key (routeId)
 );
 
 
-create table Route_Scenery  (		#足迹-景点表
+create table route_scenery  (		#足迹-景点表
 	`noteId` 		BIGINT NOT NULL,	#足迹Id(PK, FK)
 	`sceneryId` 	BIGINT NOT NULL,	#景点ID(PK, FK)
 	`scenerySq` 	BIGINT,				#景点在路径中的顺序
     primary key (noteId,sceneryId),
     foreign key (noteId) 	references note(noteId),
-    foreign key (sceneryId) references Scenery(sceneryId)
+    foreign key (sceneryId) references scenery(sceneryId)
 );
 
-create table Question  (			#问题贴表
+create table question  (			#问题贴表
 	`noteId` 		BIGINT NOT NULL,	#帖子Id(PK, FK)
 	`questionId` 	BIGINT auto_increment NOT NULL,	#问题id(PK) 
 	`content` 		text,		#问题的内容
@@ -53,7 +50,7 @@ create table Question  (			#问题贴表
 	primary key (questionId)
 );
 
-create table Comment (					#评论
+create table comment (					#评论
 	`commentId` BIGINT auto_increment NOT NULL,				#评论Id(PK)
 	`content` 	text NULL,				#评论文字内容
 	`account` 	char(18) NOT NULL,				#评论者的账号
@@ -64,12 +61,12 @@ create table Comment (					#评论
 );
 
 
-create table Scenery_Ticket  (		#景点票价
+create table scenery_ticket  (		#景点票价
 	`description` 	text,		#票的情况
 	`money` 		BIGINT,				#价格
 	`sceneryId` 	BIGINT,				#景点ID(PK, FK)
 	`TicketId` 		BIGINT,				#票价ID(PK)
-    foreign key (sceneryId) references Scenery(sceneryId),
+    foreign key (sceneryId) references scenery(sceneryId),
 	primary key (sceneryId,TicketId)
 );
 
