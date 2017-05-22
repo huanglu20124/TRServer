@@ -17,14 +17,14 @@ import java.util.Random;
 public class LCTestUpImage {
 	
 	/**
-	 * ͨsocket传送数据
+	 * 通socket浼犻�佹暟鎹�
 	 * @throws IOException 
 	 * @throws UnknownHostException 
 	 */
     public static void socketData(String IP, int port, String param) throws UnknownHostException, IOException {
     	Socket client = new Socket(InetAddress.getByName(IP), port);
 		OutputStreamWriter out = new OutputStreamWriter(client.getOutputStream());
-		// ע�⣡����   ������ַ��Բ��ܱ�
+		// 注锟解！锟斤拷锟斤拷   锟斤拷锟斤拷锟斤拷址锟斤拷圆锟斤拷鼙锟�
 		out.write("Post  "+param + "  HTTP/1.0\r\n");
 		out.flush();
 		
@@ -46,7 +46,7 @@ public class LCTestUpImage {
 	}
 	
     /**
-     * 把字节转化字符串
+     * 鎶婂瓧鑺傝浆鍖栧瓧绗︿覆
      * @param b
      * @return
      */
@@ -67,7 +67,7 @@ public class LCTestUpImage {
     }  
 	
     /**
-     * 获取一定长度的随机字符串
+     * 鑾峰彇涓�瀹氶暱搴︾殑闅忔満瀛楃涓�
      * @param length
      * @return
      */
@@ -86,7 +86,7 @@ public class LCTestUpImage {
     
     
     /**
-     * --------------------上面不用看，直接复制就好---------------------------------------------------------------------
+     * --------------------涓婇潰涓嶇敤鐪嬶紝鐩存帴澶嶅埗灏卞ソ---------------------------------------------------------------------
      */
     
     
@@ -94,24 +94,24 @@ public class LCTestUpImage {
     
     
     /**
-     *	-------------------------上传带图片的足迹  示例---------------------------------------------------------
-     * 上传带图片的足迹  示例
+     *	-------------------------涓婁紶甯﹀浘鐗囩殑瓒宠抗  绀轰緥---------------------------------------------------------
+     * 涓婁紶甯﹀浘鐗囩殑瓒宠抗  绀轰緥
      * @throws Exception
      */
     public static void Route() throws IOException {
     	FileInputStream inputStream = new FileInputStream("sources/images/000.png");
 		byte[] imageArr = new byte[inputStream.available()];
 		inputStream.read(imageArr);
-		String imageUrl = "http://119.29.121.44:8349/images/" + getRandomString(20); // 20写死好了 
-		testAddRoute("读者空白", "去了澳门", "这是一条内容", "2025+2026+2027+3001", imageArr, imageUrl);
+		String imageUrl = "http://119.29.121.44:8349/images/" + getRandomString(20); // 20鍐欐濂戒簡 
+		testAddRoute("璇昏�呯┖鐧�", "鍘讳簡婢抽棬", "杩欐槸涓�鏉″唴瀹�", "2025+2026+2027+3001", imageArr, imageUrl);
 	}
     
     /**
-	 * 上传带图片的足迹帖子示例  			(上传问题帖和评论，也是类似的)
+	 * 涓婁紶甯﹀浘鐗囩殑瓒宠抗甯栧瓙绀轰緥  			(涓婁紶闂甯栧拰璇勮锛屼篃鏄被浼肩殑)
 	 * @throws IOException 
 	 */
-	private static void testAddRoute(String account, String title, String content, String sceneries
-			, byte[] imageArr, String imageUrl) throws IOException {
+	private static void testAddRoute(String account, String title, String content, String sceneries, 
+			byte[] imageArr, String imageUrl) throws IOException {
 		String secp = "UTF-8";
 		account = URLEncoder.encode(account, secp);
 		title = URLEncoder.encode(title, secp);
@@ -136,16 +136,16 @@ public class LCTestUpImage {
     
     
     /**
-     * -------------------------------上传带图片的问题  示例---------------------------------------------------
-     * 上传带图片的问题  示例
+     * -------------------------------涓婁紶甯﹀浘鐗囩殑闂  绀轰緥---------------------------------------------------
+     * 涓婁紶甯﹀浘鐗囩殑闂  绀轰緥
      * @throws Exception
      */
     public static void Question() throws IOException {
     	FileInputStream inputStream = new FileInputStream("sources/images/000.png");
 		byte[] imageArr = new byte[inputStream.available()];
 		inputStream.read(imageArr);
-		String imageUrl = "http://119.29.121.44:8349/images/" + getRandomString(20); // 20写死好了
-		testAddQuestion("读者空白", "我的问题", "问题内容", imageArr, imageUrl);
+		String imageUrl = "http://119.29.121.44:8349/images/" + getRandomString(20); // 20鍐欐濂戒簡
+		testAddQuestion("璇昏�呯┖鐧�", "鎴戠殑闂", "闂鍐呭", imageArr, imageUrl);
 	}
     
     private static void testAddQuestion(String account, String title, String content, 
@@ -169,15 +169,15 @@ public class LCTestUpImage {
     
     
     /**
-     * ------------------------------上传带图片的评论示例-----------------------------------------------------
-     * 上传带图片的评论示例
+     * ------------------------------涓婁紶甯﹀浘鐗囩殑璇勮绀轰緥-----------------------------------------------------
+     * 涓婁紶甯﹀浘鐗囩殑璇勮绀轰緥
      */
     public static void Comment() throws IOException {
     	FileInputStream inputStream = new FileInputStream("sources/images/000.png");
 		byte[] imageArr = new byte[inputStream.available()];
 		inputStream.read(imageArr);
-		String imageUrl = "http://119.29.121.44:8349/images/" + getRandomString(20); // 20写死好了
-		testAddComment("读者空白", "我的评论", imageArr, imageUrl);
+		String imageUrl = "http://119.29.121.44:8349/images/" + getRandomString(20); // 20鍐欐濂戒簡
+		testAddComment("璇昏�呯┖鐧�", "鎴戠殑璇勮", imageArr, imageUrl);
     }
     
     /**
@@ -206,15 +206,15 @@ public class LCTestUpImage {
 	 * @throws IOException 
 	 */
 	public static void main(String[] args) throws IOException {
-//		上传带图片的足迹  示例
+//		涓婁紶甯﹀浘鐗囩殑瓒宠抗  绀轰緥
 		Route();
 		
 		
-//		上传带图片的问题  示例
+//		涓婁紶甯﹀浘鐗囩殑闂  绀轰緥
 //		Question();
 		
 		
-//		上传带图片的评论示例
+//		涓婁紶甯﹀浘鐗囩殑璇勮绀轰緥
 //		Comment();
 	}
 

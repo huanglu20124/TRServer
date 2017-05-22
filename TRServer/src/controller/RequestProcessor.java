@@ -23,35 +23,35 @@ import model.tool.contentTool.JHttpContentTool;
 public class RequestProcessor implements Runnable {
 	
 	/** 
-	 * ��־��¼��
+	 * 锟斤拷志锟斤拷录锟斤拷
 	 * */
 	private final static Logger logger = Logger.
 			getLogger(RequestProcessor.class.getCanonicalName());
 	
 	/** 
-	 * ���ļ���
+	 * 锟斤拷锟侥硷拷锟斤拷
 	 * */
 	private File rootDirectory;
 	
 
 	/** 
-	 * �Ҳ���get���������ļ���·��ʱ��ƴ������ļ�����
+	 * 锟揭诧拷锟斤拷get锟斤拷锟斤拷锟斤拷锟斤拷锟侥硷拷锟斤拷路锟斤拷时锟斤拷拼锟斤拷锟斤拷锟斤拷募锟斤拷锟斤拷锟�
 	 * */
 	private String indexFileName = "index.html";
 	
 
 	/** 
-	 * �ͻ�������
+	 * 锟酵伙拷锟斤拷锟斤拷锟斤拷
 	 * */
 	private Socket connection;
 	
 	/**
-	 * �ͻ���Http����ģ��
+	 * 锟酵伙拷锟斤拷Http锟斤拷锟斤拷模锟斤拷
 	 **/
 	JHttpRequest request;
 	
 	/***
-	 * ������Http�ظ�ģ��
+	 * 锟斤拷锟斤拷锟斤拷Http锟截革拷模锟斤拷
 	 */
 	JHttpResponse response;
 	
@@ -63,7 +63,7 @@ public class RequestProcessor implements Runnable {
 		}
 		
 		try {
-			// ���ع淶·�����ļ���ʾ
+			// 锟斤拷锟截规范路锟斤拷锟斤拷锟侥硷拷锟斤拷示
 			rootDirectory = rootDirectory.getCanonicalFile();
 		} catch (Exception e) {
 			// TODO: handle exception
@@ -85,7 +85,8 @@ public class RequestProcessor implements Runnable {
 		Reader in = null;
 		
 		try {
-			raw = new BufferedOutputStream(connection.getOutputStream());
+			raw = new BufferedOutputStream(
+					connection.getOutputStream());
 			out = new OutputStreamWriter(raw, "UTF-8");
 			in = new InputStreamReader(
 					new BufferedInputStream(
@@ -108,7 +109,7 @@ public class RequestProcessor implements Runnable {
 				System.out.println("New Request" + "  IP:" +connection.getRemoteSocketAddress());
 			}
 			
-			// �����������
+			// 锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷锟�
 			JHttpRequest request = new JHttpRequest(get);
 			this.request = request;
 			String method = request.getMethod();
@@ -117,7 +118,7 @@ public class RequestProcessor implements Runnable {
 			if ("GET".equals(method)) {
 				String fileName = request.getFile();
 				
-				// ���url��'/'��β
+				// 锟斤拷锟絬rl锟斤拷'/'锟斤拷尾
 				if (fileName.endsWith("/")) {
 					fileName += indexFileName;
 				}
@@ -132,7 +133,7 @@ public class RequestProcessor implements Runnable {
 				File theFile = new File(
 						rootDirectory, fileName.substring(1, index-1));
 				
-				// �ļ��ɶ�������·�����ڸ�Ŀ¼֮�£����ܷ��ͣ���ֹ��������������������Դ
+				// 锟侥硷拷锟缴讹拷锟斤拷锟斤拷锟斤拷路锟斤拷锟斤拷锟节革拷目录之锟铰ｏ拷锟斤拷锟杰凤拷锟酵ｏ拷锟斤拷止锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷源
 				if (theFile.canRead() && theFile.getCanonicalPath().startsWith(root)) {
 					byte[] theData;
 					FileInputStream fileInputStream = new 
@@ -141,7 +142,7 @@ public class RequestProcessor implements Runnable {
 					fileInputStream.read(theData);
 					
 					if (version.startsWith("HTTP/")) {
-						// ����һ��MIME�ײ�
+						// 锟斤拷锟斤拷一锟斤拷MIME锟阶诧拷
 						sendHeader(out, "HTTP/1.0 200 OK", 
 								contentType, theData.length);
 					}
@@ -149,10 +150,10 @@ public class RequestProcessor implements Runnable {
 					raw.write(theData);
 					raw.flush();
 					
-				} else { // �޷��ҵ��ļ�, ��̬���json�ı�����
+				} else { // 锟睫凤拷锟揭碉拷锟侥硷拷, 锟斤拷态锟斤拷锟絡son锟侥憋拷锟斤拷锟斤拷
 					makeJsonToResponse(out, version);
 				} 
-			} else { // ����GET����
+			} else { // 锟斤拷锟斤拷GET锟斤拷锟斤拷
 				makeJsonToResponse(out, version);
 			}
 			
@@ -171,7 +172,7 @@ public class RequestProcessor implements Runnable {
 	}
 	
 	/**
-	 * ��̬���json�ı�����
+	 * 锟斤拷态锟斤拷锟絡son锟侥憋拷锟斤拷锟斤拷
 	 * @param out
 	 * @param version
 	 * @throws IOException
@@ -195,7 +196,7 @@ public class RequestProcessor implements Runnable {
 		out.write(responseCode + "\r\n");
 		Date now = new Date();
 		out.write("Date: " + now + "\r\n");
-		out.write("Server�� JHTTP 2.0\r\n");
+		out.write("Server锟斤拷 JHTTP 2.0\r\n");
 		out.write("Content-length: " + contentType + "\r\n\r\n");
 		out.flush();
 	}
