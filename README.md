@@ -19,11 +19,11 @@
 （3）主服务器和备份数据库分离<br/>
 （4）SSL加密数据，异步更新备用数据库<br/>
 （5）使用map存储固定的URL，如果请求的URL包含有 在map里面的任意一个URL，<br/>
-＆nbsp;＆nbsp;把对应的字符串（key）转化成方法，执行<br/>
-＆nbsp;＆nbsp;// 定义两个Map，分别为ClassMap、MethodMap，
-＆nbsp;＆nbsp;a、先通过URL去ClassMap中查找对应的类名(字符串)，通过该字符串得到对应的Class对象  Class urlClass = Class.forName(classStr);  <br/>
-＆nbsp;＆nbsp;b、再通过URL去MethodMap中查找对应的方法（字符串），通过 Method md = urlClass.getMethod("方法名字", new Class[] {xxxx.class, ..}) <br/>
-＆nbsp;＆nbsp;c、生成新对象，使用该方法：<br/>
-＆nbsp;＆nbsp;＆nbsp;Object[] arguments = new Object[] {ipInfo,pw};    //获得参数Object <br/>
-＆nbsp;＆nbsp;＆nbsp;md.invoke(urlClass.newInstance(), arguments);	  //执行方法 <br/>
+&nbsp;&nbsp;把对应的字符串（key）转化成方法，执行<br/>
+&nbsp;&nbsp;// 定义两个Map，分别为ClassMap、MethodMap，
+&nbsp;&nbsp;a、先通过URL去ClassMap中查找对应的类名(字符串)，通过该字符串得到对应的Class对象  Class urlClass = Class.forName(classStr);  <br/>
+&nbsp;&nbsp;b、再通过URL去MethodMap中查找对应的方法（字符串），通过 Method md = urlClass.getMethod("方法名字", new Class[] {xxxx.class, ..}) <br/>
+&nbsp;&nbsp;c、生成新对象，使用该方法：<br/>
+&nbsp;&nbsp;&nbsp;Object[] arguments = new Object[] {ipInfo,pw};    //获得参数Object <br/>
+&nbsp;&nbsp;&nbsp;md.invoke(urlClass.newInstance(), arguments);	  //执行方法 <br/>
 
