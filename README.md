@@ -26,7 +26,7 @@
 &nbsp;&nbsp;c、生成新对象，使用该方法：<br/>
 &nbsp;&nbsp;&nbsp;Object[] arguments = new Object[] {ipInfo,pw};    //获得参数Object <br/>
 &nbsp;&nbsp;&nbsp;md.invoke(urlClass.newInstance(), arguments);	  //执行方法 <br/>
-（6）接收POST请求，服务端如何获取参数？<br/>
-（7）接收图片处理优化(不转化为json格式，直接用socket流传送)<br/>
+（6）服务端如何获取POST参数？（找jin发送的HTTP的框架）<br/>
+（7）接收图片处理优化（自己设计一个“请求头”,里面写图片长度，服务端按着图片长度接收多少字节流）<br/>
 
 
