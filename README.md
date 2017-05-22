@@ -28,5 +28,6 @@
 &nbsp;&nbsp;&nbsp;md.invoke(urlClass.newInstance(), arguments);	  //执行方法 <br/>
 （6）服务端如何获取POST参数？（找jin发送的HTTP的框架）<br/>
 （7）接收图片处理优化（自己设计一个“请求头”,里面写图片长度，服务端按着图片长度接收多少字节流）<br/>
+（8）扩展：未来使用protobuf设计“请求头”
 
 
