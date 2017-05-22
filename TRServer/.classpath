@@ -2,15 +2,17 @@
 <classpath>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
-	<classpathentry kind="lib" path="H:/myEclipseWS/TRServer/sources/lib/jdom.jar"/>
-	<classpathentry kind="lib" path="H:/myEclipseWS/TRServer/sources/lib/mysql-connector-java-5.1.16-bin.jar"/>
-	<classpathentry kind="lib" path="H:/myEclipseWS/TRServer/sources/lib/json-lib-2.4-jdk15andJar/commons-beanutils-1.8.0.jar"/>
-	<classpathentry kind="lib" path="H:/myEclipseWS/TRServer/sources/lib/json-lib-2.4-jdk15andJar/commons-collections-3.2.1.jar"/>
-	<classpathentry kind="lib" path="H:/myEclipseWS/TRServer/sources/lib/json-lib-2.4-jdk15andJar/commons-lang-2.6.jar"/>
-	<classpathentry kind="lib" path="H:/myEclipseWS/TRServer/sources/lib/json-lib-2.4-jdk15andJar/commons-logging-1.1.1.jar"/>
-	<classpathentry kind="lib" path="H:/myEclipseWS/TRServer/sources/lib/json-lib-2.4-jdk15andJar/ezmorph-1.0.6.jar"/>
-	<classpathentry kind="lib" path="H:/myEclipseWS/TRServer/sources/lib/json-lib-2.4-jdk15andJar/json-lib-2.4-jdk15.jar"/>
-	<classpathentry kind="lib" path="H:/myEclipseWS/TRServer/sources/lib/json-lib-2.4-jdk15andJar/jsonplugin-0.32.jar"/>
-	<classpathentry kind="lib" path="H:/myEclipseWS/TRServer/sources/lib/json-lib-2.4-jdk15andJar/xom-1.2.6.jar"/>
+	<classpathentry kind="lib" path="C:/Users/mayra/Desktop/yellow/java/TRServer/TRServer/sources/lib/jdom.jar"/>
+	<classpathentry kind="lib" path="C:/Users/mayra/Desktop/yellow/java/TRServer/TRServer/sources/lib/mysql-connector-java-5.1.16-bin.jar"/>
+	<classpathentry kind="lib" path="C:/Users/mayra/Desktop/yellow/java/TRServer/TRServer/sources/lib/json-lib-2.4-jdk15andJar/commons-beanutils-1.8.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/mayra/Desktop/yellow/java/TRServer/TRServer/sources/lib/json-lib-2.4-jdk15andJar/commons-collections-3.2.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/mayra/Desktop/yellow/java/TRServer/TRServer/sources/lib/json-lib-2.4-jdk15andJar/commons-lang-2.6.jar"/>
+	<classpathentry kind="lib" path="C:/Users/mayra/Desktop/yellow/java/TRServer/TRServer/sources/lib/json-lib-2.4-jdk15andJar/commons-logging-1.1.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/mayra/Desktop/yellow/java/TRServer/TRServer/sources/lib/json-lib-2.4-jdk15andJar/ezmorph-1.0.6.jar"/>
+	<classpathentry kind="lib" path="C:/Users/mayra/Desktop/yellow/java/TRServer/TRServer/sources/lib/json-lib-2.4-jdk15andJar/json-lib-2.4-jdk15.jar"/>
+	<classpathentry kind="lib" path="C:/Users/mayra/Desktop/yellow/java/TRServer/TRServer/sources/lib/json-lib-2.4-jdk15andJar/jsonplugin-0.32.jar"/>
+	<classpathentry kind="lib" path="C:/Users/mayra/Desktop/yellow/java/TRServer/TRServer/sources/lib/json-lib-2.4-jdk15andJar/xom-1.2.6.jar"/>
+	<classpathentry kind="lib" path="C:/Users/mayra/Desktop/yellow/java/TRServer/TRServer/sources/lib/commons-pool-1.5.4.jar"/>
+	<classpathentry kind="lib" path="C:/Users/mayra/Desktop/yellow/java/TRServer/TRServer/sources/lib/jedis-2.1.0.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
